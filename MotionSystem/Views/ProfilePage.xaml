@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MotionSystem.Views.ProfilePage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="{StaticResource BgMain}">
+
+    <VerticalStackLayout Padding="20" Spacing="20">
+
+        <Label Text="PROFILE"
+               FontSize="22"
+               FontAttributes="Bold"
+               TextColor="{StaticResource TextPrimary}" />
+
+        <!-- Avatar -->
+        <Frame WidthRequest="120"
+               HeightRequest="120"
+               CornerRadius="18"
+               HorizontalOptions="Center"
+               BackgroundColor="{StaticResource BgCard}">
+
+            <Frame.Shadow>
+                <Shadow Brush="{StaticResource AccentNeon}"
+                        Offset="0,0"
+                        Radius="18"
+                        Opacity="0.8"/>
+            </Frame.Shadow>
+
+            <Image Aspect="AspectFill" />
+        </Frame>
+
+        <Label Text="Your Name"
+               HorizontalOptions="Center"
+               TextColor="{StaticResource TextPrimary}" />
+
+        <Frame BackgroundColor="{StaticResource BgCard}"
+               CornerRadius="16"
+               Padding="16">
+            <VerticalStackLayout>
+                <Label Text="TOTAL XP"
+                       TextColor="{StaticResource TextSecondary}" />
+                <Label Text="120 XP"
+                       FontSize="20"
+                       TextColor="{StaticResource AccentNeon}" />
+            </VerticalStackLayout>
+        </Frame>
+
+    </VerticalStackLayout>
+</ContentPage>

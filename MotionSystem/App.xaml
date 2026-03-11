@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application
+    x:Class="MotionSystem.App"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Application.Resources>
+        <!-- Backgrounds -->
+        <Color x:Key="BgMain">#2B2E33</Color>
+        <Color x:Key="BgCard">#32363C</Color>
+
+        <!-- Text -->
+        <Color x:Key="TextPrimary">#EDEDED</Color>
+        <Color x:Key="TextSecondary">#A0A0A0</Color>
+
+        <!-- Accent -->
+        <Color x:Key="Accent">#8F6BFF</Color>
+        <Color x:Key="AccentNeon">#B896FF</Color>
+        <Color x:Key="Inactive">#55585E</Color>
+    </Application.Resources>
+</Application>

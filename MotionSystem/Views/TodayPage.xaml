@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MotionSystem.Views.TodayPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="{StaticResource BgMain}">
+
+    <Grid RowDefinitions="Auto,*,Auto" Padding="20">
+
+        <!-- ================= BOTTOM NAV ================= -->
+        <Grid Grid.Row="2"
+              ColumnDefinitions="*,*,*"
+              Padding="0,14"
+              HorizontalOptions="Center">
+
+            <!-- CALENDAR -->
+            <Frame Grid.Column="0"
+                   Padding="12,8"
+                   CornerRadius="18"
+                   BorderColor="{StaticResource Accent}"
+                   BackgroundColor="#3A3470"
+                   HorizontalOptions="Center">
+
+                <Label Text="CALENDAR"
+                       FontSize="13"
+                       FontAttributes="Bold"
+                       TextColor="{StaticResource Accent}" />
+            </Frame>
+
+            <!-- TODAY (ACTIVE) -->
+            <Frame Grid.Column="1"
+                   Padding="16,10"
+                   CornerRadius="20"
+                   BorderColor="{StaticResource AccentNeon}"
+                   BackgroundColor="#3A3470"
+                   HorizontalOptions="Center">
+
+                <Frame.Shadow>
+                    <Shadow Brush="{StaticResource AccentNeon}"
+                            Radius="18"
+                            Opacity="0.7"/>
+                </Frame.Shadow>
+
+                <Label Text="TODAY"
+                       FontSize="15"
+                       FontAttributes="Bold"
+                       TextColor="{StaticResource AccentNeon}" />
+            </Frame>
+
+            <!-- PROFILE -->
+            <Frame Grid.Column="2"
+                   Padding="12,8"
+                   CornerRadius="18"
+                   BorderColor="{StaticResource Accent}"
+                   BackgroundColor="#3A3470"
+                   HorizontalOptions="Center">
+
+                <Label Text="PROFILE"
+                       FontSize="13"
+                       FontAttributes="Bold"
+                       TextColor="{StaticResource Accent}" />
+            </Frame>
+
+        </Grid>
+
+        <!-- ================= MAIN CONTENT ================= -->
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Spacing="20">
+
+                <!-- Title -->
+                <Label Text="Stretching"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       TextColor="{StaticResource TextPrimary}" />
+
+                <!-- Progress Today -->
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="Progress today"
+                           FontSize="12"
+                           TextColor="{StaticResource TextSecondary}" />
+
+                    <ProgressBar x:Name="TodayStretchProgress"
+                                 HeightRequest="6"
+                                 Progress="0.35"
+                                 BackgroundColor="{StaticResource Inactive}"
+                                 ProgressColor="{StaticResource Accent}" />
+                </VerticalStackLayout>
+
+                <!-- ===== EXERCISES ===== -->
+
+                <!-- Exercise -->
+                <ScrollView Grid.Row="1">
+                    <VerticalStackLayout x:Name="ExercisesContainer"
+                         Spacing="20">
+                        <Frame BackgroundColor="{StaticResource BgCard}"
+                                   CornerRadius="16"
+                                   Padding="14">
+
+                            <Grid ColumnDefinitions="Auto,*,Auto" VerticalOptions="Center">
+                                <CheckBox />
+                                <Label Grid.Column="1"
+                                   Text="Glute Bridge"
+                                   TextColor="{StaticResource TextPrimary}" />
+                                <Label Grid.Column="2"
+                                   Text="2 XP"
+                                   TextColor="{StaticResource TextSecondary}" />
+                            </Grid>
+                        </Frame>
+
+                        <Frame BackgroundColor="{StaticResource BgCard}"
+                           CornerRadius="16"
+                           Padding="14">
+
+                            <Grid ColumnDefinitions="Auto,*,Auto">
+                                <CheckBox />
+                                <Label Grid.Column="1"
+                                   Text="Seated Forward Fold"
+                                   TextColor="{StaticResource TextPrimary}" />
+                                <Label Grid.Column="2"
+                                   Text="3 XP"
+                                   TextColor="{StaticResource TextSecondary}" />
+                            </Grid>
+                        </Frame>
+
+                        <Frame BackgroundColor="{StaticResource BgCard}"
+                           CornerRadius="16"
+                           Padding="14">
+
+                            <Grid ColumnDefinitions="Auto,*,Auto">
+                                <CheckBox />
+                                <Label Grid.Column="1"
+                                   Text="Plank (30 sec)"
+                                   TextColor="{StaticResource TextPrimary}" />
+                                <Label Grid.Column="2"
+                                   Text="2 XP"
+                                   TextColor="{StaticResource TextSecondary}" />
+                            </Grid>
+                        </Frame>
+                    </VerticalStackLayout>
+                </ScrollView>
+
+                <!-- ===== REST TIMER (HIDDEN FOR NOW) ===== -->
+                <Frame x:Name="RestTimerBlock"
+                       IsVisible="False"
+                       BackgroundColor="{StaticResource BgCard}"
+                       CornerRadius="18"
+                       Padding="16">
+
+                    <VerticalStackLayout Spacing="8" HorizontalOptions="Center">
+                        <Label Text="Rest"
+                               FontAttributes="Bold"
+                               TextColor="{StaticResource TextPrimary}" />
+                        <Label x:Name="RestTimerText"
+                               Text="00:45"
+                               FontSize="22"
+                               TextColor="{StaticResource AccentNeon}" />
+                    </VerticalStackLayout>
+                </Frame>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- ================= SAVE BUTTON ================= -->
+        <Frame Grid.Row="2"
+               Padding="0,10"
+               HorizontalOptions="Center"
+               HasShadow="False">
+
+            <Button x:Name="SaveDayButton"
+                    Text="SAVE"
+                    Clicked="OnSaveDayClicked"
+                    WidthRequest="200"
+                    HeightRequest="52"
+                    CornerRadius="26"
+                    BackgroundColor="{StaticResource Accent}"
+                    TextColor="Black"/>
+        </Frame>
+
+    </Grid>
+</ContentPage>
