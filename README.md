@@ -1,4 +1,3 @@
-# MotionSystem
 # MotionSystem (A-Sys Motion)
 
 MotionSystem is a mobile workout tracker built with .NET MAUI.  
